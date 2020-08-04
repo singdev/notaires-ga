@@ -17,7 +17,7 @@ app.use(cors());
 app.use(bodyParser.json({ limit: '50mb'}));
 
 cms1(app);
-datastore();
+datastore(app);
 site(app);
 
 app.listen(PORT, () => console.log("Listening at port " + PORT));
