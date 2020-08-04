@@ -10,6 +10,9 @@ const app = express();
 
 const PORT = process.env.PORT || 3000;
 
+app.set('views', __dirname);
+app.set('view engine', 'pug');
+
 app.use(cors());
 app.use(bodyParser.json({ limit: '50mb'}));
 

@@ -1,0 +1,1 @@
+module.exports = "cms1/views";
