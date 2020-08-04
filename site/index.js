@@ -8,7 +8,7 @@ const viewDir = require('./constants/view_dir');
  */
 module.exports = (app) => {
 
-    app.use(express.static(__dirname + "/public"));
+    app.use('/site/s', express.static(__dirname + "/public"));
 
     app.get('/hello', (req, res, next) => {
         res.render(viewDir + '/hello.pug');

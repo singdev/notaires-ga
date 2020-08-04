@@ -8,7 +8,7 @@ const viewDir = require('./constants/view_dir');
  */
 module.exports = (app) => {
 
-    app.use(express.static(__dirname + "/public"));
+    app.use('/cms1/s', express.static(__dirname + "/public"));
   
 
     app.get('/hello/cms1', (req, res, next) => {
