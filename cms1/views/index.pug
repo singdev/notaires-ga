@@ -10,7 +10,10 @@ html
     main
       include includes/sidebar.pug
 
-      h1 Hello world
+      if article
+        include includes/edit_article.pug
+      else
+        h1 Hello World
 
   script(src="/cms1/s/js/sidenav.js")
 

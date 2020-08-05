@@ -14,6 +14,15 @@ const menuCtrl = new MenuRepository();
 const rubriqueCtrl = new RubriqueRepository();
 const articleCtrl = new ArticleRepository();
 
+
+async function load(){
+    const menus = await menuCtrl.findAllMenu();
+    const rubriques = await rubriqueCtrl.findAllRubrique();
+    const articles = await articleCtrl.findAllArticle();
+
+    return { menus, rubriques, articles };
+}
+
 /**
  * 
  * @param {Express} app 
@@ -25,16 +34,23 @@ module.exports = (app) => {
     });
 
     app.get('/cms1', async (req, res, next) => {
+        res.redirect('/cms1/null');
+    });
+
+    app.get('/cms1/:articleId', async (req, res, next) => {
         try {
-            const menus = await menuCtrl.findAllMenu();
-            const rubriques = await rubriqueCtrl.findAllRubrique();
-            const articles = await articleCtrl.findAllArticle();
-            res.render(viewDir + '/index.pug', { menus, rubriques, articles });
+            const param = await load();
+            const articleId = req.params.articleId;
+            if(articleId != 'null'){
+                const article = await articleCtrl.findArticle(req.params.articleId);
+                param.article = article; 
+            }
+            res.render(viewDir + '/index.pug', param)
         } catch (err) {
             console.log(err);
             res.sendStatus(500);
         }
-    });
+    })
 
     app.post('/cms1/menu', menuController.createMenu);
     app.post('/cms1/rubrique', rubriqueController.createRubrique);

@@ -35,6 +35,7 @@ link(rel="stylesheet" href="/cms1/s/css/sidenav.css")
                 .articles
                   for article in articles
                     if article.rubrique._id.toString() == rubrique._id.toString()
-                      p=article.title
+                      - let link = "/cms1/" + article._id;
+                      a(href=link)=article.title
 
   
