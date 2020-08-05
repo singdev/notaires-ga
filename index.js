@@ -17,7 +17,6 @@ const PORT = process.env.PORT || 3000;
 app.set('views', __dirname);
 app.set('view engine', 'pug');
 
-
 cms1(app);
 datastore(app);
 site(app);

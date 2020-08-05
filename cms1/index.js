@@ -1,4 +1,5 @@
 const express = require('express');
+const multer = require('multer');
 
 const viewDir = require('./constants/view_dir');
 
@@ -14,7 +15,6 @@ const menuCtrl = new MenuRepository();
 const rubriqueCtrl = new RubriqueRepository();
 const articleCtrl = new ArticleRepository();
 
-
 async function load(){
     const menus = await menuCtrl.findAllMenu();
     const rubriques = await rubriqueCtrl.findAllRubrique();
@@ -28,6 +28,19 @@ async function load(){
  * @param {Express} app 
  */
 module.exports = (app) => {
+
+    const storage = multer.diskStorage({
+        destination: function (req, file, cb) {
+            console.log("Hello world la family")
+            cb(null, __dirname + '/public/uploads')
+        },
+        filename: function (req, file, cb) {
+            console.log("Hello world la family")
+            cb(null, file.fieldname + '-' + Date.now())
+        }
+    })
+    
+    const upload = multer({ storage: storage })
 
     app.get('/hello/cms1', (req, res, next) => {
         res.render(viewDir + '/hello.pug');
@@ -55,6 +68,8 @@ module.exports = (app) => {
     app.post('/cms1/menu', menuController.createMenu);
     app.post('/cms1/rubrique', rubriqueController.createRubrique);
     app.post('/cms1/article', articleController.createArticle);
+
+    app.post('/cms1/article/:id/photo', upload.single('photo'), articleController.changePhoto);
 
     app.use('/cms1/s', express.static(__dirname + "/public"));
 }

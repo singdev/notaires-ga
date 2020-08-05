@@ -1,1 +1,8 @@
-h1=article.title
+.edit-article
+  h1=article.title
+  if article.photoURL
+    img(src=article.photoURL alt="Illustration de l'article")
+  form(method="post" action="/cms1/article/"+article._id+ "/photo" enctype="multipart/form-data")
+    input(type="file" name="photo")
+    input(type="submit" value="Changer l'illustration")
+

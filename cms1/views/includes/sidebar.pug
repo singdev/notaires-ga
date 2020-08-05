@@ -21,7 +21,7 @@ link(rel="stylesheet" href="/cms1/s/css/sidenav.css")
             input(type="submit" value="Ajouter")
         .rubriques
           for rubrique in rubriques
-            if rubrique.menu._id.toString() == menu._id.toString()
+            if rubrique.menu && rubrique.menu._id.toString() == menu._id.toString()
               - let articleFormId = "article" + rubrique._id;
               .rubrique
                 p=rubrique.title
