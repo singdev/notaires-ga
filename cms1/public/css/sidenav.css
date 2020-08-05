@@ -1,0 +1,16 @@
+.sidenav {
+    background: dodgerblue;
+    color: dodgerblue;
+    height: 100vh;
+    overflow-y: scroll;
+    color: white;
+    padding: 8px;
+}
+
+.new form {
+    display: none;
+}
+
+.new .show-create-form {
+    display: flex;
+}

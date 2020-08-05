@@ -8,13 +8,14 @@ const site = require('./site');
 
 const app = express();
 
+app.use(cors());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
 const PORT = process.env.PORT || 3000;
 
 app.set('views', __dirname);
 app.set('view engine', 'pug');
-
-app.use(cors());
-app.use(bodyParser.json({ limit: '50mb'}));
 
 cms1(app);
 datastore(app);

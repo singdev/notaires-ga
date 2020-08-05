@@ -1,0 +1,19 @@
+doctype html
+html
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    link(rel="stylesheet" href="/cms1/s/css/style.css")
+
+    title Notaires du Gabon - CMS 1
+  body    
+    main
+      include includes/sidebar.pug
+
+      if article
+        include includes/edit_article.pug
+      else
+        h1 Hello World
+
+  script(src="/cms1/s/js/sidenav.js")
+
