@@ -11,6 +11,8 @@ function loadMenu(){
         m.querySelector('.title').addEventListener('click', (e) => {
             m.querySelector('.rubriques').classList.toggle('show-content');
             m.querySelector('.hidden-form-ctn').classList.toggle('show-content');
+            m.querySelector('.update-form').classList.toggle('show-content');
+
         })
     })
 }
@@ -21,6 +23,7 @@ function loadRubrique(){
         m.querySelector('.title').addEventListener('click', (e) => {
             m.querySelector('.articles').classList.toggle('show-content');
             m.querySelector('.hidden-form-ctn').classList.toggle('show-content');
+            m.querySelector('.update-form').classList.toggle('show-content');
         })
     })
 }

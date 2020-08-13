@@ -18,7 +18,7 @@ link(rel="stylesheet" href="/cms1/s/css/sidenav.css")
             input(type="hidden" name="id" value=menu._id)
             button &times;
 
-        form.update-form(method="post" action="/cms1/menu/update")
+        form.update-form(class="update-style" method="post" action="/cms1/menu/update")
           input(type="hidden" name="id" value=menu._id)
           input(type="text" name="title" placeholder="Changez le nom")
           button Modifier
@@ -40,7 +40,7 @@ link(rel="stylesheet" href="/cms1/s/css/sidenav.css")
                     button &times;
                 .actions
                   
-                  form.update-form(method="post" action="/cms1/rubrique/update")
+                  form.update-form(class="update-style" method="post" action="/cms1/rubrique/update")
                     input(type="hidden" name="id" value=rubrique._id)
                     input(type="text" name="title" placeholder="Changez le nom")
                     button Modifier

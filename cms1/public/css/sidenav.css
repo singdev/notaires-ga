@@ -40,12 +40,30 @@ button:hover, input[type="submit"]:hover {
     font-size: 12px;
 }
 
-.menu .add-rubrique, .menu .rubriques, .rubrique .add-article, .rubrique .articles {
+.menu .add-rubrique, .menu .rubriques, .rubrique .add-article, .rubrique .articles, .update-form {
     display: none;
 }
 
 .menu .show-content, .rubrique .show-content {
     display: flex;
+}
+
+.update-form {
+    width: 100%;
+    flex-direction: row;
+}
+
+.update-form button {
+    background-color: dodgerblue;
+    color: white;
+    border: none;
+    padding: 4px;
+}
+
+.update-form input {
+    border: none;
+    border-bottom: 1px solid #cccccc;
+    padding: 8px;
 }
 
 .menu .title {
@@ -67,7 +85,7 @@ button:hover, input[type="submit"]:hover {
     overflow: hidden;
 }
 
-button:focus{
+button:focus {
     outline: none;
 }
 
