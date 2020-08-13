@@ -2,8 +2,8 @@ link(rel="stylesheet" href="/cms1/s/css/sidenav.css")
 
 .sidenav
   
-  .new
-    button(class="new-button" onclick="showCreateForm('#creer-menu')") Nouveau menu
+  .top-content(class="hidden-form-ctn")
+    button(class="new-button" onclick="toggleShowForm('#creer-menu')") Nouveau menu
     form(id="creer-menu" method="post" action="/cms1/menu")
       input(type="text" name="title" placeholder="Nom")
       input(type="submit" value="Ajouter")
@@ -12,9 +12,9 @@ link(rel="stylesheet" href="/cms1/s/css/sidenav.css")
     for menu in menus
       - let formId = "rubrique" + menu._id;
       .menu
-        p=menu.title
-        .new
-          button(class="new-button" onclick="showCreateForm('"+"#" + formId + "')") Nouvelle rubrique
+        p.title=menu.title
+        .hidden-form-ctn(class="add-rubrique")
+          button(class="new-button" onclick="toggleShowForm('"+"#" + formId + "')") Nouvelle rubrique
           form(id=formId method="post" action="/cms1/rubrique")
             input(type="hidden" name="menu" value=menu._id)
             input(type="text" name="title" placeholder="Nom")
@@ -24,13 +24,14 @@ link(rel="stylesheet" href="/cms1/s/css/sidenav.css")
             if rubrique.menu && rubrique.menu._id.toString() == menu._id.toString()
               - let articleFormId = "article" + rubrique._id;
               .rubrique
-                p=rubrique.title
-                .new
-                  button(class="new-button" onclick="showCreateForm('"+"#" + articleFormId + "')") Nouvelle article
-                  form(id=articleFormId method="post" action="/cms1/article")
-                    input(type="hidden" name="rubrique" value=rubrique._id)
-                    input(type="text" name="title" placeholder="Nom")
-                    input(type="submit" value="Ajouter")
+                p.title=rubrique.title
+                .actions
+                  .add-article(class="hidden-form-ctn")
+                    button(class="new-button" onclick="toggleShowForm('"+"#" + articleFormId + "')") Nouvelle article
+                    form(id=articleFormId method="post" action="/cms1/article")
+                      input(type="hidden" name="rubrique" value=rubrique._id)
+                      input(type="text" name="title" placeholder="Nom")
+                      input(type="submit" value="Ajouter")
                 
                 .articles
                   for article in articles

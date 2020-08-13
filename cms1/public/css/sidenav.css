@@ -1,16 +1,107 @@
 .sidenav {
-    background: dodgerblue;
-    color: dodgerblue;
-    height: 100vh;
-    overflow-y: scroll;
-    color: white;
-    padding: 8px;
+    border-right: 1px solid #cccccc;
 }
 
-.new form {
+.top-content {
+    padding: 20px;
+    border-bottom: 1px solid #cccccc;
+    background-color: dodgerblue;
+    text-align: center;
+    position: sticky;
+    top: 0px;
+    left: 0px;
+}
+
+.top-content button {
+    background-color: rgb(5, 25, 46);
+    color: white;
+    padding: 10px 32px;
+    border: none;
+    font-size: 16px;
+}
+
+button:hover, input[type="submit"]:hover {
+    cursor: pointer;
+}
+
+.hidden-form-ctn form {
+    display: none;
+    padding: 20px;
+
+}
+
+.hidden-form-ctn .show-create-form {
+    display: flex;
+    flex-direction: row;
+}
+
+.hidden-form-ctn form input {
+    padding: 6px;
+    border: 1px solid #cccccc;
+    outline: none;
+    font-size: 12px;
+}
+
+.menu .add-rubrique, .menu .rubriques, .rubrique .add-article, .rubrique .articles {
     display: none;
 }
 
-.new .show-create-form {
+.menu .show-content, .rubrique .show-content {
     display: flex;
+}
+
+.menu .title {
+    padding: 16px;
+    border-bottom: 1px solid #cccccc;
+    background-color: #efefef;
+}
+
+.menu .title:hover {
+    cursor: pointer;
+}
+
+.add-rubrique, .add-article {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 20px;
+    overflow: hidden;
+}
+
+button:focus{
+    outline: none;
+}
+
+.add-rubrique button, .add-article button {
+    border: none;
+    background-color: #eeeeee;
+    color: #444444;
+    box-shadow: -1px 0.5px 5px #cccccc;
+    padding: 8px 48px;
+}
+
+.rubriques {
+    display: flex;
+    flex-direction: column;
+}
+
+.rubrique .title {
+    color: dodgerblue;
+    border-bottom: 1px solid dodgerblue;
+    padding: 8px;
+    background-color: transparent;
+}
+
+.articles a {
+    text-decoration-line: none;
+    color: #777777;
+    padding: 8px;
+    padding-left: 20px;
+}
+
+.articles {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
