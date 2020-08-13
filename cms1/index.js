@@ -79,6 +79,7 @@ module.exports = (app) => {
     app.post('/cms1/article/:id/photo', upload.single('photo'), articleController.changePhoto);
     app.post('/cms1/menu/update', menuController.updateMenu);
     app.post('/cms1/rubrique/update', rubriqueController.updateRubrique);
+    app.post('/cms1/article/:id', articleController.updateArticle);
 
 
     //Static

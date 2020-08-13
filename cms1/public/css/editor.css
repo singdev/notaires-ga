@@ -1,0 +1,51 @@
+.edit-article {
+    padding: 3em;
+}
+
+.placeholder-img {
+    width: 200px;
+    height: 200px;
+    background-color: #cccccc;
+}
+
+.edit-article button {
+    color: white;
+    background-color: dodgerblue;
+    padding: 8px 48px;
+    border: none;
+}
+
+.edit-article button:focus {
+    outline: none;
+}
+
+.photo img {
+    width: auto;
+    height: 200px;
+}
+
+.photo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.photo-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.header {
+    display: grid;
+    grid-template-columns: 45% 45%;
+    gap: 5%;
+    justify-content: space-evenly;
+}
+
+textarea {
+    border: 1px solid #cccccc;
+    padding: 16px;
+}
