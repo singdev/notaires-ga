@@ -1,5 +1,10 @@
 .sidenav {
     border-right: 1px solid #cccccc;
+    height: 100vh;
+    overflow: scroll;
+    position: sticky;
+    top: 0px;
+    left: 0px;
 }
 
 .top-content {
