@@ -33,5 +33,14 @@ module.exports = {
         } catch(err){
             res.redirect('/cms1');
         }
+    },
+
+    async updateMenu(req, res, next){
+        try {
+            await menuCtrl.updateMenu(req.body.id, req.body);
+            res.redirect('/cms1');
+        } catch(err){
+            res.redirect('/cms1');
+        }
     }
 }

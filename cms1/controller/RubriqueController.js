@@ -26,5 +26,14 @@ module.exports = {
         } catch (err) {
             res.redirect('/cms1');
         }
+    },
+
+    async updateRubrique(req, res, next){
+        try {
+            await rubriqueRepository.updateRubrique(req.body.id, req.body);
+            res.redirect('/cms1');
+        } catch(err){
+            res.redirect("/cms1");
+        }
     }
 }

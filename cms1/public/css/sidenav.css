@@ -26,8 +26,6 @@ button:hover, input[type="submit"]:hover {
 
 .hidden-form-ctn form {
     display: none;
-    padding: 20px;
-
 }
 
 .hidden-form-ctn .show-create-form {
@@ -86,6 +84,10 @@ button:focus{
     flex-direction: column;
 }
 
+.rubrique {
+    padding-top: 20px;
+}
+
 .rubrique .title {
     color: dodgerblue;
     border-bottom: 1px solid dodgerblue;
@@ -104,4 +106,19 @@ button:focus{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+}
+
+.title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.delete-form button {
+    background-color: transparent;
+    color: #777777;
+    font-size: 24px;
+    font-weight: bold;
+    border: none;
 }

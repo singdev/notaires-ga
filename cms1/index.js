@@ -77,6 +77,9 @@ module.exports = (app) => {
 
     //Update
     app.post('/cms1/article/:id/photo', upload.single('photo'), articleController.changePhoto);
+    app.post('/cms1/menu/update', menuController.updateMenu);
+    app.post('/cms1/rubrique/update', rubriqueController.updateRubrique);
+
 
     //Static
     app.use('/cms1/s', express.static(__dirname + "/public"));

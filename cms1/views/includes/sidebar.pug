@@ -12,10 +12,17 @@ link(rel="stylesheet" href="/cms1/s/css/sidenav.css")
     for menu in menus
       - let formId = "rubrique" + menu._id;
       .menu
-        p.title=menu.title
+        .title
+          span=menu.title
           form.delete-form(method="post" action="/cms1/menu/delete")
             input(type="hidden" name="id" value=menu._id)
             button &times;
+
+        form.update-form(method="post" action="/cms1/menu/update")
+          input(type="hidden" name="id" value=menu._id)
+          input(type="text" name="title" placeholder="Changez le nom")
+          button Modifier
+
         .hidden-form-ctn(class="add-rubrique")
           button(class="new-button" onclick="toggleShowForm('"+"#" + formId + "')") Nouvelle rubrique
           form(id=formId method="post" action="/cms1/rubrique")
@@ -27,11 +34,17 @@ link(rel="stylesheet" href="/cms1/s/css/sidenav.css")
             if rubrique.menu && rubrique.menu._id.toString() == menu._id.toString()
               - let articleFormId = "article" + rubrique._id;
               .rubrique
-                p.title=rubrique.title
+                .title=rubrique.title
                   form.delete-form(method="post" action="/cms1/rubrique/delete")
                     input(type="hidden" name="id" value=rubrique._id)
                     button &times;
                 .actions
+                  
+                  form.update-form(method="post" action="/cms1/rubrique/update")
+                    input(type="hidden" name="id" value=rubrique._id)
+                    input(type="text" name="title" placeholder="Changez le nom")
+                    button Modifier
+
                   .add-article(class="hidden-form-ctn")
                     button(class="new-button" onclick="toggleShowForm('"+"#" + articleFormId + "')") Nouvelle article
                     form(id=articleFormId method="post" action="/cms1/article")
@@ -43,7 +56,8 @@ link(rel="stylesheet" href="/cms1/s/css/sidenav.css")
                   for article in articles
                     if article.rubrique._id.toString() == rubrique._id.toString()
                       - let link = "/cms1/" + article._id;
-                      a(href=link)=article.title
+                      .title(style="border: 1px dashed #cccccc;")
+                        a(href=link)=article.title
                         form.delete-form(method="post" action="/cms1/article/delete")
                           input(type="hidden" name="id" value=article._id)
                           button &times;
