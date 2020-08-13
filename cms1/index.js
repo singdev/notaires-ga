@@ -65,11 +65,19 @@ module.exports = (app) => {
         }
     })
 
+    //Create
     app.post('/cms1/menu', menuController.createMenu);
     app.post('/cms1/rubrique', rubriqueController.createRubrique);
     app.post('/cms1/article', articleController.createArticle);
 
+    //Delete
+    app.post('/cms1/article/delete', articleController.deleteArticle);
+    app.post('/cms1/rubrique/delete', rubriqueController.deleteRubrique);
+    app.post('/cms1/menu/delete', menuController.deleteMenu);
+
+    //Update
     app.post('/cms1/article/:id/photo', upload.single('photo'), articleController.changePhoto);
 
+    //Static
     app.use('/cms1/s', express.static(__dirname + "/public"));
 }

@@ -6,9 +6,18 @@ const Domain = process.env.HOST || 'http://localhost:3000';
 
 module.exports = {
 
+    async deleteArticle(req, res, next){
+        try {
+            await articleRepository.deleteArticle(req.body.id);
+            res.redirect('/cms1');
+        } catch (err) {
+            res.redirect('/cms1');
+        }
+    },
+
     async createArticle(req, res, next) {
         try {
-            const article = await articleRepository.createArticle(req.body);
+            articleRepository.createArticle(req.body);
             res.redirect('/cms1');
         } catch (err) {
             res.redirect('/cms1');
