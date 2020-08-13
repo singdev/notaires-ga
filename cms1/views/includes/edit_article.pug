@@ -1,7 +1,13 @@
 link(rel="stylesheet" href="/cms1/s/css/editor.css")
 
 .edit-article
-  h1=article.title
+  form(method="post" action="/cms1/article/"+article._id)
+    input(type="hidden" name="_id" value=article.id)
+    input(type="hidden" name="photoURL" value=article.photoURL)
+    input(type="hidden" name="resume" value=article.resume)
+    h1
+      input(type="text" name="title" value=article.title)
+    button Modifier
   .header
     .photo
       if article.photoURL
@@ -15,7 +21,7 @@ link(rel="stylesheet" href="/cms1/s/css/editor.css")
       form(method="post" action="/cms1/article/"+article._id)
         input(type="hidden" name="_id" value=article.id)
         input(type="hidden" name="photoURL" value=article.photoURL)
-        textarea( cols="40" rows="13" name="resume" placeholder="Resumé de l'article")=article.resume
+        textarea( cols="40" rows="13" name="resume" placeholder="Petite introduction")=article.resume
         button Modifier
 
 

@@ -46,6 +46,13 @@
 }
 
 textarea {
-    border: 1px solid #cccccc;
+    border: none;
+    border-bottom: 1px solid #cccccc;
     padding: 16px;
+}
+
+h1 input {
+    border: none;
+    font-size: 36px;
+    font-weight: bold;
 }

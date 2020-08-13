@@ -45,8 +45,6 @@ module.exports = {
 
     async updateArticle(req, res, next){
         try {
-            console.log(req.body);
-            console.log(req.params.id);
             await articleRepository.updateArticle(req.params.id, req.body);
             res.redirect('/cms1/' + req.params.id);
         } catch(err){
