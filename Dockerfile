@@ -1,8 +1,8 @@
-FROM node:14
+FROM node:latest
 
 ENV PORT 8080
 ENV DB_NAME notairega
-ENV DB_HOST 127.0.0.1
+ENV DB_HOST notairesgastore
 ENV HOST https://notairesga.pivot40.tech
 
 # Create app directory

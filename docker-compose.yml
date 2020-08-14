@@ -1,0 +1,14 @@
+version: "2"
+services:
+    notairesga-web:
+        build: .
+        ports:
+            - "1045:8080"
+        volumes:
+            - ./uploads:/usr/src/app/cms1/public/uploads
+        links:
+            - notairesgastore
+    notairesgastore:
+        image: mongo
+        volumes:
+            - ../jarrivealibreville/data:/data/db
