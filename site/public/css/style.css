@@ -5,8 +5,3 @@
     font-family: 'ubuntu', sans-serif;
     transition: 0.4s;
 }
-
-main {
-    display: grid;
-    grid-template-columns: 25% 75%;
-}

@@ -1,0 +1,28 @@
+header
+  .site-title
+    h1
+      span Notaires
+      span.dot  .ga
+    p Le site officiel des notaires du Gabon
+
+nav
+  for menu in menus
+    .menu
+      p.nav-item=menu.title
+      .dropdown
+        h1.rubrique-maste=menu.title
+          span.close &times;
+        .dd-content
+          for rubrique in rubriques
+            if rubrique.menu._id.toString() == menu._id.toString()
+              .rubrique
+                p.rubrique-title=rubrique.title
+                ul.articles
+                  for a in articles
+                    if a.rubrique._id.toString() == rubrique._id.toString()
+                      - let link = '/' + a._id.toString();
+                      a(href=link).article-title=a.title 
+.images
+ img(src="https://images.unsplash.com/photo-1526894198609-10b3cdf45c52?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=727&q=80" alt="Une image pour illustrer")
+ .content
+   h1 Les notaires du Gabon conquièrent le Web avec leur nouveau site

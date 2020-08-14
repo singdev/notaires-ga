@@ -7,22 +7,10 @@ const menuController = require('./controller/MenuController');
 const rubriqueController = require('./controller/RubriqueController');
 const articleController = require('./controller/ArticleController');
 
-const MenuRepository = require('../datastore/repository/MenuRepository');
-const RubriqueRepository = require('../datastore/repository/RubriqueRepository');
 const ArticleRepository = require('../datastore/repository/ArticleRepository');
-const e = require('express');
-
-const menuCtrl = new MenuRepository();
-const rubriqueCtrl = new RubriqueRepository();
 const articleCtrl = new ArticleRepository();
 
-async function load(){
-    const menus = await menuCtrl.findAllMenu();
-    const rubriques = await rubriqueCtrl.findAllRubrique();
-    const articles = await articleCtrl.findAllArticle();
-
-    return { menus, rubriques, articles };
-}
+const load = require('../datastore/publish').load;
 
 /**
  * 

@@ -3,21 +3,21 @@ html
   head
     meta(charset="UTF-8")
     meta(name="viewport" content="width=device-width, initial-scale=1.0")
-    link(rel="stylesheet" href="/cms1/s/css/style.css")
+    link(rel="stylesheet" href="/site/s/css/style.css")
+    link(rel="stylesheet" href="/site/s/css/header.css")
     link(href="https://fonts.googleapis.com/css2?family=Abel&family=Ubuntu:wght@300;400;500&display=swap" rel="stylesheet")
     script(src="/header/dist/bundle.js")
     script(src="/embed/dist/bundle.js")
     script(src="/editorjs/dist/editor.js")
-    title Notaires du Gabon - CMS 1
+    title Notaires du Gabon - Aller à la découverte des missions des notaires du Gabon
   body    
     main
-      include includes/sidebar.pug
+      include include/header.pug
 
       if article
-        include includes/edit_article.pug
+        include include/article.pug
       else
-        include includes/welcome.pug
+        include include/home.pug
 
-  script(src="/cms1/s/js/sidenav.js")
-  script(src="/cms1/s/js/article.js")
-
+  script(src="/site/s/js/header.js")
+  script(src="/site/s/js/article.js")
