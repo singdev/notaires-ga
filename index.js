@@ -14,6 +14,8 @@ app.use(bodyParser.json());
 
 const PORT = process.env.PORT || 3000;
 
+app.use(express.static(__dirname + '/node_modules/@editorjs/'));
+
 app.set('views', __dirname);
 app.set('view engine', 'pug');
 

@@ -25,7 +25,7 @@ link(rel="stylesheet" href="/cms1/s/css/editor.css")
         button Modifier
 
   .main
-    button(class="load-editor-btn" onclick="loadEditor('"+ article.content +"')") Charger l'éditeur
+    button(class="load-editor-btn" onclick="loadEditor("+ article.content +")") Charger l'éditeur
     #editorjs
 
   form(method="post" onsubmit="saveContent()" action="/cms1/article/"+article._id)
