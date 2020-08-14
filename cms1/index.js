@@ -10,6 +10,7 @@ const articleController = require('./controller/ArticleController');
 const MenuRepository = require('../datastore/repository/MenuRepository');
 const RubriqueRepository = require('../datastore/repository/RubriqueRepository');
 const ArticleRepository = require('../datastore/repository/ArticleRepository');
+const e = require('express');
 
 const menuCtrl = new MenuRepository();
 const rubriqueCtrl = new RubriqueRepository();
@@ -57,6 +58,7 @@ module.exports = (app) => {
             if(articleId != 'null'){
                 const article = await articleCtrl.findArticle(req.params.articleId);
                 param.article = article; 
+                console.log(article);
             }
             res.render(viewDir + '/index.pug', param)
         } catch (err) {
