@@ -1,4 +1,4 @@
-FROM node:latest
+FROM node:12.0-slim
 
 ENV PORT 8080
 ENV DB_NAME notairega
