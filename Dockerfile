@@ -2,7 +2,7 @@ FROM node:12.0-slim
 
 ENV PORT 8080
 ENV DB_NAME notairega
-ENV DB_HOST notairesgastore
+ENV DB_HOST mongo
 ENV HOST https://notairesga.pivot40.tech
 
 # Create app directory

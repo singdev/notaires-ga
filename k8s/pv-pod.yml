@@ -1,0 +1,60 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: notairesga-pv-volume
+  labels:
+    type: local
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: manual
+  capacity:
+    storage: 10Gi
+  hostPath:
+    path: "/mnt/notairesga"
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: notairesga-pv-claim
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: manual
+  resources:
+    requests:
+      storage: 3Gi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: notairesga
+spec:
+  selector:
+    app: app
+  ports:
+    - port: 8080
+      targetPort: 8080
+  type: NodePort
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: notairesga-pv-pod
+spec:
+  volumes:
+    - name: notairesga-pv-storage
+      persistentVolumeClaim:
+        claimName: notairesga-pv-claim
+  containers:
+    - name: app
+      image: orpheenve/notairega:0.1
+      ports:
+        - containerPort: 8080
+      volumeMounts:
+        - mountPath: "/usr/src/app/cms1/public/uploads"
+          name: notairesga-pv-storage
+      env:
+        - name: MONGO_URL
+          value: mongodb://mongo:27017/notairega
+      imagePullPolicy: Always
