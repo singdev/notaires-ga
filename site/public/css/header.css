@@ -24,6 +24,11 @@ nav {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    position: sticky;
+    top: 0;
+    left: 0;
+    background-color: #efefef;
+    z-index: 200;
 }
 
 .nav-item {
@@ -31,6 +36,9 @@ nav {
     background-color: #efefef;
     text-align: center;
     border-top: 2px solid #efefef;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+
 }
 
 .nav-item:hover {
@@ -53,7 +61,7 @@ nav {
     left: 15%;
     right: 15%;
     width: 70%;
-    background-color: #ffffff;
+    background-color: #efefefef;
     border-top: 2px solid dodgerblue;
     height: 60vh;
     overflow-y: scroll;
@@ -70,8 +78,12 @@ nav {
     flex-direction: column;
 }
 
+.on-article {
+    height: 40vh;
+}
+
 .images img {
-    width: 90vw;
+    width: 100vw;
     height: auto;
 }
 
@@ -97,7 +109,7 @@ nav {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .rubrique-maste {
@@ -137,7 +149,7 @@ nav {
 }
 
 .articles a {
-    padding-top: 16px;
+    padding-top: 8px;
     color: #777777;
     font-size: 16px;
 }

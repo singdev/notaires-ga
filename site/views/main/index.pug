@@ -4,13 +4,15 @@ html
     meta(charset="UTF-8")
     meta(name="viewport" content="width=device-width, initial-scale=1.0")
     link(rel="stylesheet" href="/site/s/css/style.css")
-    link(rel="stylesheet" href="/site/s/css/header.css")
+    link(rel="stylesheet" href="/site/s/css/header.css")  
+    link(rel="stylesheet" href="/site/s/css/footer.css")  
+    link(rel="stylesheet" href="/site/s/css/article.css")
     link(href="https://fonts.googleapis.com/css2?family=Abel&family=Ubuntu:wght@300;400;500&display=swap" rel="stylesheet")
     script(src="/header/dist/bundle.js")
     script(src="/embed/dist/bundle.js")
     script(src="/editorjs/dist/editor.js")
     title Notaires du Gabon - Aller à la découverte des missions des notaires du Gabon
-  body    
+  body(onload=article ? "loadEditor("+ article.content +")" : "")    
     main
       include include/header.pug
 
@@ -18,6 +20,8 @@ html
         include include/article.pug
       else
         include include/home.pug
+      
+      include include/footer.pug
 
   script(src="/site/s/js/header.js")
   script(src="/site/s/js/article.js")
