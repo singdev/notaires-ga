@@ -2,6 +2,7 @@ version: "2"
 services:
     notairesga-web:
         build: .
+        restart: always
         ports:
             - "1045:8080"
         volumes:
@@ -10,5 +11,6 @@ services:
             - notairesgastore
     notairesgastore:
         image: mongo
+        restart: always
         volumes:
-            - ../jarrivealibreville/data:/data/db
+            - ./data:/data/db
