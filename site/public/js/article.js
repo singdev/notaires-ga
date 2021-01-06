@@ -1,7 +1,5 @@
 let editor = null;
 
-console.log("AAAAAAA");
-
 async function loadEditor(content) {
     console.log("Editor");
     editor = new EditorJS({

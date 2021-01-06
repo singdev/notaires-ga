@@ -1,8 +1,8 @@
 header {
-    padding: 20px;
+    padding: 2rem;
     display: flex;
     flex-direction: row;
-    padding-bottom: 60px;
+    width: 100%;
 }
 
 .site-title h1 {
@@ -27,17 +27,18 @@ nav {
     position: sticky;
     top: 0;
     left: 0;
-    background-color: #efefef;
+    background-color: #444444;
     z-index: 200;
 }
 
 .nav-item {
     padding: 20px;
-    background-color: #efefef;
+    background-color: #4b4b4b;
     text-align: center;
-    border-top: 2px solid #efefef;
-    border-left: 1px solid white;
-    border-right: 1px solid white;
+    border-top: 2px solid #4b4b4b;
+    border-left: 1px solid #777777;
+    border-right: 1px solid #777777;
+    color: white;
 
 }
 
@@ -55,13 +56,12 @@ nav {
 .menu .drop {
     display: flex;
     flex-direction: column;
-    width: 100%;
     position: absolute;
     padding: 16px;
     left: 15%;
     right: 15%;
     width: 70%;
-    background-color: #efefefef;
+    background-color: #525252;
     border-top: 2px solid dodgerblue;
     height: 60vh;
     overflow-y: scroll;
@@ -70,55 +70,53 @@ nav {
 
 .images {
     width: 100%;
-    height: 90vh;
+    height: 60vh;
     overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    background: linear-gradient(#00000086, #00000086), 
+    url("https://images.unsplash.com/photo-1555374018-13a8994ab246?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=358&q=80");
 }
 
-.on-article {
-    height: 40vh;
-}
-
-.images img {
-    width: 100vw;
-    height: auto;
-}
 
 .images .content {
-    width: 50%;
-    height: 50%;
     padding: 20px;
-    background-color: rgba(30, 143, 255, 0.568);
+    width: 50%;
+    height: 40%;
+    min-height: 300px;
+    min-width: 300px;
+    background-color: rgba(30, 143, 255, 0.336);
     color: white;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    position: relative;
-    bottom: 50%;
 }
 
 .images .content h1 {
     font-weight: normal;
+    font-size: 1.4em;
+    padding: 1rem;
 }
 
 .menu .drop .dd-content {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: flex-start;
     align-items: flex-start;
+    flex-wrap: wrap;
 }
 
 .rubrique-maste {
-    font-size: 38px;
+    font-size: 1.8em;
     font-weight: normal;
     color: dodgerblue;
-    padding: 16px;
+    padding: 0.5rem;
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-between;
 }
 
@@ -138,19 +136,18 @@ nav {
 }
 
 .rubrique {
-    padding: 16px;
+    padding: 1rem;
 }
 
 .rubrique-title {
-    font-size: 24px;
-    color: rgb(44, 150, 255);
+    font-size: 1.4em;
+    color: rgb(255, 255, 255);
     padding-bottom: 16px;
-    text-transform: uppercase;
 }
 
 .articles a {
     padding-top: 8px;
-    color: #777777;
+    color: #c9c9c9;
     font-size: 16px;
 }
 
@@ -159,4 +156,40 @@ nav {
     text-decoration: underline;
 }
 
+.humberger {
+    display: none;
+}
+
+.outline {
+    text-decoration: none;
+    color: white;
+    padding: 1rem 0.5rem;
+    border: 1px solid #ffffff;
+    text-align: center;
+    display: inline-block;
+}
+
+@media (max-width: 600px) {
+    .menu {
+        display: none;
+    }
+
+    .humberger {
+        display: block;
+    }
+
+    .home {
+        display: block;
+    }
+
+    nav {
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .show-menu .menu {
+        width: 100%;
+        display: block;
+    }
+}
 

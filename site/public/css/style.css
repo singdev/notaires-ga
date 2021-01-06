@@ -5,3 +5,20 @@
     font-family: 'ubuntu', sans-serif;
     transition: 0.4s;
 }
+
+html {
+    background-color: #eeeeee;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.main-container {
+    width: 1024px;
+    max-width: 100%;
+    padding: 1rem;
+}

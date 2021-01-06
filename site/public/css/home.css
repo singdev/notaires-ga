@@ -1,0 +1,24 @@
+#map { height: 180px; }
+
+section p {
+    color: #444444;
+    padding-top: 1rem;
+    line-height: 1.8em;
+}
+
+section {
+    padding: 2rem;
+}
+
+.big-title {
+    font-weight: 100;
+    font-size: 2.0em;
+    padding: 2rem;
+    padding-top: 6rem;
+}
+
+section .outline {
+    margin-top: 1rem;
+    color: dodgerblue;
+    border-color: dodgerblue;
+}

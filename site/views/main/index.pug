@@ -7,7 +7,13 @@ html
     link(rel="stylesheet" href="/site/s/css/header.css")  
     link(rel="stylesheet" href="/site/s/css/footer.css")  
     link(rel="stylesheet" href="/site/s/css/article.css")
+    link(rel="stylesheet" href="/site/s/css/home.css")
+    link(rel="preconnect" href="https://fonts.gstatic.com")
+    link(href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet")
+    link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous")
     link(href="https://fonts.googleapis.com/css2?family=Abel&family=Ubuntu:wght@300;400;500&display=swap" rel="stylesheet")
+    link(rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="")
+    script(src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin="")
     script(src="/header/dist/bundle.js")
     script(src="/embed/dist/bundle.js")
     script(src="/editorjs/dist/editor.js")
@@ -16,12 +22,14 @@ html
     main
       include include/header.pug
 
-      if article
-        include include/article.pug
-      else
-        include include/home.pug
+      .main-container
+        if article
+          include include/article.pug
+        else
+          include include/home.pug
       
       include include/footer.pug
 
   script(src="/site/s/js/header.js")
   script(src="/site/s/js/article.js")
+  script(src="/site/s/js/home.js")

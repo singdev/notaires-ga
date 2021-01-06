@@ -1,10 +1,12 @@
 
-.article-title=article.title
-
+- let rubrique = rubriques.find(r => r._id.toString() == article.rubrique.toString())
+.article-title(id="article")=rubrique.title
 .article-header
     div
       img(src=article.photoURL alt="Illustration de l'article")
-    p=article.resume
+    div
+      h1=article.title
+      p=article.resume
 
 #editorjs
   
